@@ -50,5 +50,5 @@ Though, if you wish you may put the whole thing in the main file as well. On Win
 ## Finally - the dashboard
 
 On my current setup, the site of the project looks like this:
-![preview of the dashboard](.github/preview.gif)
 
+![preview of the dashboard](preview.gif)
