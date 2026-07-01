@@ -1,0 +1,176 @@
+@font-face
+{
+	font-family: 'm6x11';
+	src: url('fonts/m6x11plus.ttf');
+}
+
+@keyframes pulse
+{
+	0%		{ transform: scale(100%);	}
+	50%		{ transform: scale(110%);	}
+	100%	{ transform: scale(100%);	}
+}
+
+@keyframes bounce
+{
+	0%		{ transform: translateY(0);			}
+	4%		{ transform: translateY(-8px);		}
+	10%		{ transform: translateY(0); 		}
+	16%		{ transform: translateY(-6.67px);	}
+	22%		{ transform: translateY(0); 		}
+	28%		{ transform: translateY(-1.33px);	}
+	34%		{ transform: translateY(0);			}
+	100%	{ transform: translateY(0);			}
+}
+
+@keyframes scroll
+{
+	0%		{ transform: translateX(0);		}
+	100%	{ transform: translateX(-50%);	}
+}
+
+*
+{
+	font-family: 'm6x11', 'consolas';
+	font-size: 64px;
+	font-smooth: never;
+	-webkit-font-smoothing: none;
+
+	
+	color: rgb(255, 255, 255);
+
+	text-align: center;
+	image-rendering: pixelated;
+}
+
+html
+{
+	background-image: url('dna.png');
+	background-size: calc(4 * 24px) calc(4 * 51px);
+	background-color: rgb(255, 170, 51);
+}
+
+.backdrop
+{
+	background-color: rgb(250, 152, 40);
+
+	outline: 4px dashed rgb(255, 170, 51);
+	outline-offset: -10px;
+}
+
+.title-container
+{
+	display: flex;
+	flex-direction: row;
+
+	justify-content: center;
+	align-items: end;
+
+	flex-wrap: wrap;
+
+	margin: 30px auto 0 auto;
+	padding: 30px 0 30px 0;
+	width: 80vw;
+}
+
+.title-container > img
+{
+	object-fit: contain;
+	animation: bounce 2.5s ease-in infinite;
+}
+
+.title-container > span
+{
+	width: 18px;
+}
+
+.tall-char
+{
+	position: relative;
+	top: 11px;
+}
+
+.image-container
+{
+	display: flex;
+	flex-direction: row;
+
+	justify-content: center;
+	align-items: center;
+
+	flex-wrap: wrap;
+
+	gap: 8px;
+
+	width: 80vw;
+	margin: 35px auto 0 auto;
+}
+
+.image-container > div
+{
+	width: 160px;
+	position: relative;
+}
+
+.image-container > div::after
+{
+	content: '';
+	position: absolute;
+
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	background: url('hover_outline.png') center center / contain no-repeat;
+	opacity: 0;
+
+	animation: pulse 1s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+}
+
+.image-container > div:hover::after
+{
+	opacity: 1;
+}
+
+.image-container > div > img
+{
+	display: block;
+
+	width: 160px;
+	height: 160px;
+}
+
+.evolution-wrapper
+{
+	position: relative;
+	margin: auto;
+}
+
+.evolution-container
+{
+	display: flex;
+	overflow: hidden;
+	margin: auto;
+	margin-top: 35px;
+
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+
+	opacity: 0;
+}
+
+.evolution-container > div
+{
+	display: flex;
+	/*column-gap: calc(4px * 4);*/
+	animation: scroll 15s linear infinite;
+}
+
+.evolution-container > div > img
+{
+	width: calc(37px * 4);
+	height: calc(39px * 4);
+}
