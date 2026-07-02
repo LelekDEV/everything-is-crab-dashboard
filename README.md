@@ -12,7 +12,7 @@ After each run you gain the ability to "photograph" your creature alongside it's
 
 ## Setup
 
-**Right now you don't... so omit this section for now**
+First and foremost, you need to obviously own a copy of the game and take some pictures (or at least setup a directory with the same file structure as the game creates). Then you can (somewhat) conveniently update the path to yours in `consts.json` (the default path on Windows is `%USERPROFILE%\Pictures\Everything is Crab`, but you need to provide an absolute one with the disk label e.g. C:/Users/...).
 
 If you want to run the dashboard for yourself, you need to have some way of hosting an HTTP server with PHP included.
 
