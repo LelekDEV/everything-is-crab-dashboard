@@ -4,6 +4,8 @@
 # Called when needed through index.php -> main -> * this file *
 
 
+from const_loader import ROOT_PATH
+
 from PIL import Image
 from os import fsencode, listdir, path, makedirs, getcwd
 
@@ -11,8 +13,6 @@ class Scan:
 	SCANNING = 0
 	SCANNED = 1
 	EMPTY = 2
-
-ROOT_PATH = b'C:\\Users\\Euro\\Pictures\\Everything is Crab'
 
 def generate_evolution_icons(img_path, dir_path, abs_path):
 	with Image.open(fsencode(path.join(abs_path, img_path))) as img:
@@ -64,6 +64,6 @@ def fetch_evolutions():
 			num = b_num.decode('utf-8')
 
 			img_path = f'Evolutions #{num}.png'.encode('utf-8')
-			dir_path = f'..\\dynamic_assets\\evolutions\\e_{num}'
+			dir_path = f'../dynamic_assets/evolutions/e_{num}'
 
 			generate_evolution_icons(img_path, dir_path, abs_path)

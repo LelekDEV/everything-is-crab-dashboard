@@ -6,6 +6,13 @@ const CHAR_PATH = 'dynamic_assets/chars';
 const IMG_PATH = 'dynamic_assets/creatures';
 const EVO_PATH = 'dynamic_assets/evolutions';
 
+/*$consts = json_decode(file_get_contents('consts.json'), true);
+
+define('TEST', $consts['root_path']);
+echo TEST . '<br/>';
+
+const REM_IMG_PATH = 'C:/Users/Euro/Pictures/Everything is Crab';*/
+
 const REM_IMG_PATH = 'C:/Users/Euro/Pictures/Everything is Crab';
 
 $localSum = array_map(fn($item) => substr(explode('.', $item)[0], 2), array_slice(scandir(IMG_PATH), 2));
@@ -19,7 +26,7 @@ if ($localSum !== $remoteSum)
 	$output = [];
 	$code = 0;
 
-	exec('python scripts/main.py', $code, $output);
+	exec('python scripts/main.py', $output, $code);
 }
 
 ?>

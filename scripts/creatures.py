@@ -7,12 +7,12 @@
 # Called when needed through index.php -> main -> * this file *
 
 
+from const_loader import ROOT_PATH
+
 from PIL import Image, ImageDraw
 from os import fsencode, listdir, path, getcwd, chdir
 
 REMOVE_COLORS = [(255, 255, 253), (252, 170, 58), (241, 191, 132), (248, 171, 67), (232, 173, 95), (255, 239, 211), (255, 253, 237), (245, 170, 77), (255, 171, 49), (255, 253, 246), (255, 170, 53), (252, 195, 126), (255, 255, 255), (255, 238, 212), (255, 240, 212), (254, 255, 255), (244, 172, 74), (246, 170, 76), (255, 239, 213), (246, 191, 126), (255, 241, 213), (248, 170, 70), (255, 242, 227), (249, 169, 70), (254, 169, 50), (249, 170, 69), (245, 171, 74), (255, 239, 200), (255, 254, 243), (255, 253, 241), (255, 254, 246), (245, 171, 76), (245, 169, 83)]
-
-ROOT_PATH = b'C:\\Users\\Euro\\Pictures\\Everything is Crab'
 
 def custom_floodfill(img, start, tc, rc, thresh):
 	# those are the optimal data types
@@ -83,7 +83,7 @@ def fetch_creatures():
 					frames.append(cropped)
 
 			frames[0].save(
-				f'..\\dynamic_assets\\creatures\\c_{num.decode('utf-8')}.gif', 
+				f'../dynamic_assets/creatures/c_{num.decode('utf-8')}.gif', 
 				save_all = True, 
 				append_images = frames[1:], 
 				duration = 100, 

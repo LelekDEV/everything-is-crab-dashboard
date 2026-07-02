@@ -7,15 +7,13 @@
 # so if they were to get desynced somehow, your best bet would be to clear assets of both
 
 
-from creatures import fetch_creatures
-from evolutions import fetch_evolutions
-
 from os import fsencode, listdir, path, getcwd, chdir
 
-if getcwd().split('\\')[-1] != 'scripts':
+if path.split(getcwd())[-1] != 'scripts':
 	chdir('scripts')
 
-ROOT_PATH = b'C:\\Users\\Euro\\Pictures\\Everything is Crab'
+from creatures import fetch_creatures
+from evolutions import fetch_evolutions
 
 fetch_creatures()
 fetch_evolutions()
